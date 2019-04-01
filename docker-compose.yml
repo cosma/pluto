@@ -6,7 +6,9 @@ services:
     volumes:
       - .:/go/src/github.com/cosma/pluto
     working_dir: /go/src/github.com/cosma/pluto
-    command: gin run main.go
+    command: /go/bin/gin run main.go
+    environment:
+      PORT: 3000
     security_opt:
       - apparmor=unconfined
     cap_add:

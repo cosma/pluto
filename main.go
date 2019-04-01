@@ -44,6 +44,7 @@ func main() {
 	})
 
 	http.HandleFunc("/authorize", func(w http.ResponseWriter, r *http.Request) {
+
 		err := srv.HandleAuthorizeRequest(w, r)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusBadRequest)
